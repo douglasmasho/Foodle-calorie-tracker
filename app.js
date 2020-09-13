@@ -8,8 +8,6 @@ const DataController = (function(){
     if(localStorage.getItem("total") === null){
         localStorage.setItem("total", "0")
     }
-    
-
 
     //push data to local storage
     const pushToLS = (object)=>{
@@ -34,7 +32,6 @@ const DataController = (function(){
      localStorage.setItem("total", JSON.stringify(total));
      console.log(localStorage);
     }
-
 
 
     return{
@@ -105,8 +102,6 @@ const UIController = (function(){
     let list = document.querySelector("#item-list");
     let totalCal = document.querySelector(".total-calories");
     const inputs = document.querySelectorAll("input");
-
-
 
     return{
         getValues: ()=>{
@@ -210,7 +205,7 @@ const AppController = (function(dataCtrl, UICtrl){
             });
             //delete data
             deleteBtn.addEventListener("click", event=>{
-                window.location.reload();
+                // window.location.reload();
                 event.stopPropagation();
                 initState();
                 //from UI
@@ -257,7 +252,7 @@ const AppController = (function(dataCtrl, UICtrl){
         //clear the local storage
         clearBtn.addEventListener("click", ()=>{
             localStorage.clear();
-            window.location.reload();
+            // window.location.reload();
             UICtrl.clearInp(); 
         })
 
